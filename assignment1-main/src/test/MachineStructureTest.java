@@ -1,23 +1,20 @@
 package test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.util.List;
-
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 
 import main.StateMachine;
 import main.metamodel.Machine;
 import main.metamodel.State;
 import main.metamodel.Transition;
+import org.junit.Before;
+import org.junit.Test;
+
+import static junit.framework.Assert.*;
 
 public class MachineStructureTest {
 	private StateMachine stateMachine;
 	
-	@BeforeEach
+	@Before
 	public void init() {
 		stateMachine = new StateMachine();
 	}

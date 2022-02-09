@@ -1,9 +1,9 @@
 package test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static junit.framework.Assert.assertEquals;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 
 import main.MachineInterpreter;
 import main.StateMachine;
@@ -13,7 +13,7 @@ public class CDPlayerTest {
 	
 	public MachineInterpreter interpreter;
 	
-	@BeforeEach
+	@Before
 	public void init() {
 		StateMachine stateMachine = new StateMachine();
 		final int NUMBER_TRACKS= 10;

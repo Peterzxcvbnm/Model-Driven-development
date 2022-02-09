@@ -2,69 +2,125 @@ package main.metamodel;
 
 public class Transition {
 
-	public Object getEvent() {
-		// TODO Auto-generated method stub
-		return null;
+	private String eventName;
+	private State target;
+	private OperationType operationType;
+	private String operationVariableName;
+	private int operationValue;
+	private String conditionalVariableName;
+	private int conditionComparedValue;
+	private ConditionType conditionType;
+
+	public Transition(String eventName) {
+		this.eventName = eventName;
+	}
+
+	public String getEvent() {
+		return eventName;
+	}
+
+	public void setTarget(State target) {
+		this.target = target;
 	}
 
 	public State getTarget() {
-		// TODO Auto-generated method stub
-		return null;
+		return target;
+	}
+
+	public void setOperationType(OperationType operationType) {
+		this.operationType = operationType;
 	}
 
 	public boolean hasSetOperation() {
-		// TODO Auto-generated method stub
-		return false;
+		return operationType.equals(OperationType.Set);
 	}
 
 	public boolean hasIncrementOperation() {
-		// TODO Auto-generated method stub
-		return false;
+		return operationType.equals(OperationType.Increment);
 	}
 
 	public boolean hasDecrementOperation() {
-		// TODO Auto-generated method stub
-		return false;
+		return operationType.equals(OperationType.Decrement);
 	}
 
-	public Object getOperationVariableName() {
-		// TODO Auto-generated method stub
-		return null;
+	public void setOperationVariableName(String operationVariableName) {
+		this.operationVariableName = operationVariableName;
+	}
+
+	public String getOperationVariableName() {
+		return operationVariableName;
+	}
+
+	public int getOperationValue() {
+		return operationValue;
+	}
+
+	public void setOperationValue(int operationValue) {
+		this.operationValue = operationValue;
+	}
+
+	public void setConditionalVariableName(String conditionalVariableName) {
+		this.conditionalVariableName = conditionalVariableName;
+	}
+
+	public void setConditionComparedValue(int conditionComparedValue) {
+		this.conditionComparedValue = conditionComparedValue;
+	}
+
+	public void setConditionType(ConditionType conditionType) {
+		this.conditionType = conditionType;
 	}
 
 	public boolean isConditional() {
-		// TODO Auto-generated method stub
-		return false;
+		return conditionalVariableName != null;
 	}
 
-	public Object getConditionVariableName() {
-		// TODO Auto-generated method stub
-		return null;
+	public String getConditionVariableName() {
+		return conditionalVariableName;
 	}
 
-	public Integer getConditionComparedValue() {
-		// TODO Auto-generated method stub
-		return null;
+	public int getConditionComparedValue() {
+		return conditionComparedValue;
 	}
 
 	public boolean isConditionEqual() {
-		// TODO Auto-generated method stub
-		return false;
+		return conditionType == ConditionType.Equal;
 	}
 
 	public boolean isConditionGreaterThan() {
-		// TODO Auto-generated method stub
-		return false;
+		return conditionType == ConditionType.GreaterThan;
 	}
 
 	public boolean isConditionLessThan() {
-		// TODO Auto-generated method stub
-		return false;
+		return conditionType == ConditionType.LessThan;
 	}
 
 	public boolean hasOperation() {
-		// TODO Auto-generated method stub
-		return false;
+		return operationType != null;
 	}
 
+	public OperationType getOperationType() {
+		return operationType;
+	}
+
+	public boolean mayHappen(int variableValue){
+		switch (conditionType){
+			case Equal: return variableValue == conditionComparedValue;
+			case GreaterThan:return variableValue > conditionComparedValue;
+			case LessThan:return variableValue < conditionComparedValue;
+		}
+		throw new RuntimeException("Somehow the value is not equal to, greater than or less than O.o");
+	}
+
+	public enum OperationType{
+		Set,
+		Increment,
+		Decrement
+	}
+
+	public enum ConditionType{
+		Equal,
+		GreaterThan,
+		LessThan
+	}
 }
