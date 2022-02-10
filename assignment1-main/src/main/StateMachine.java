@@ -11,6 +11,9 @@ public class StateMachine {
 	private Transition currentTransition;
 
 	public Machine build() {
+		machine.getStates()
+				.forEach(s -> s.getTransitions()
+						.forEach(t -> t.setTarget(machine.getState(t.getTargetName()))));
 		return machine;
 	}
 
@@ -32,7 +35,7 @@ public class StateMachine {
 	}
 
 	public StateMachine to(String stateName) {
-		currentTransition.setTarget(machine.getState(stateName));
+		currentTransition.setTargetName(stateName);
 		return this;
 	}
 

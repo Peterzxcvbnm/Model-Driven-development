@@ -24,9 +24,9 @@ public class MachineInterpreter {
 		var integers = machine.getIntegers();
 		var key = transition.getOperationVariableName();
 		switch (transition.getOperationType()){
-			case Set: integers.put(key, transition.getOperationValue());
-			case Increment: integers.put(key, integers.get(key) + 1);
-			case Decrement: integers.put(key, integers.get(key) - 1);
+			case Set: integers.put(key, transition.getOperationValue()); break;
+			case Increment: integers.put(key, integers.get(key) + 1); break;
+			case Decrement: integers.put(key, integers.get(key) - 1); break;
 		}
 	}
 

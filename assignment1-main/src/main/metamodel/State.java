@@ -2,6 +2,7 @@ package main.metamodel;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class State {
 
@@ -26,10 +27,12 @@ public class State {
 	public Transition getTransitionByEvent(String string) {
 		return transitions
 				.stream()
-				.filter(x -> x.getEvent().equals(string) &&
-							 x.mayHappen(machine.getIntegers().get(x.getConditionVariableName())))
+				.filter(x -> x.getEvent().equals(string))
+				.filter(x -> !x.isConditional() ||
+						x.mayHappen(machine.getIntegers().get(x.getConditionVariableName())))
 				.findAny()
 				.orElse(null);
+
 	}
 
 

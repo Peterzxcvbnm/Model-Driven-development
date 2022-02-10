@@ -3,8 +3,9 @@ package main.metamodel;
 public class Transition {
 
 	private String eventName;
+	private String targetName;
 	private State target;
-	private OperationType operationType;
+	private OperationType operationType = OperationType.None;
 	private String operationVariableName;
 	private int operationValue;
 	private String conditionalVariableName;
@@ -17,6 +18,14 @@ public class Transition {
 
 	public String getEvent() {
 		return eventName;
+	}
+
+	public void setTargetName(String target) {
+		this.targetName = target;
+	}
+
+	public String getTargetName() {
+		return targetName;
 	}
 
 	public void setTarget(State target) {
@@ -106,13 +115,14 @@ public class Transition {
 	public boolean mayHappen(int variableValue){
 		switch (conditionType){
 			case Equal: return variableValue == conditionComparedValue;
-			case GreaterThan:return variableValue > conditionComparedValue;
-			case LessThan:return variableValue < conditionComparedValue;
+			case GreaterThan: return variableValue > conditionComparedValue;
+			case LessThan: return variableValue < conditionComparedValue;
 		}
 		throw new RuntimeException("Somehow the value is not equal to, greater than or less than O.o");
 	}
 
 	public enum OperationType{
+		None,
 		Set,
 		Increment,
 		Decrement
