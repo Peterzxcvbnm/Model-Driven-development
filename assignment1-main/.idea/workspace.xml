@@ -3,15 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="544ede9f-abbf-4332-aca0-ba21ba750d0b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internalDSL.iml" beforeDir="false" afterPath="$PROJECT_DIR$/internalDSL.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/MachineInterpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/MachineInterpreter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/StateMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/StateMachine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/metamodel/Machine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/metamodel/Machine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/metamodel/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/metamodel/State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/metamodel/Transition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/metamodel/Transition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/CDPlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/CDPlayerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/MachineInterpreterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/MachineInterpreterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/MachineStructureTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/MachineStructureTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +79,8 @@
       <workItem from="1644425024947" duration="834000" />
       <workItem from="1644428064626" duration="77000" />
       <workItem from="1644428153420" duration="4728000" />
+      <workItem from="1644909846070" duration="306000" />
+      <workItem from="1644910202287" duration="200000" />
     </task>
     <servers />
   </component>
